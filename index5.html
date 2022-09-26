@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+     ul {
+        background-color: whitesmoke;
+        list-style-type: none;
+     }
+     
+     li {
+        background-color:  yellow;
+        
+     }
+
+     nav>ul {
+        height: 60px;
+        line-height: 60px;
+        text-align: left;
+        background-color:  darkgray;
+     }
+
+     nav>ul>li {
+        display: inline-block;
+        position: relative;
+        background-color: beige;
+        border-radius: 5px;
+        padding: 0 20px;
+        z-index:999;
+     }
+
+     nav ul li a {
+        text-decoration: none;
+        display: block;
+        color: chocolate;
+     }
+
+     nav ul li a:hover {
+        color: black;
+     }
+
+     nav>ul>li:hover>ul {
+        display:block;
+     }
+
+     nav>ul>li>ul>li>ul>li {
+        background-color: beige;
+     }
+
+     nav>ul>li>ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+
+     }
+
+
+
+     nav>ul>li>ul>li {
+        position: relative;
+        background-color: beige;
+     }
+
+     nav>ul>li>ul>li:hover>ul {
+        display: block;
+     }
+
+     nav>ul>li>ul>li>ul {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        display: none;
+        width: 100;
+     }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="home3.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Years</a>
+            <ul>
+                <li><a href="#">2022-23</a></li>
+                <li><a href="index4.html">2021-22</a></li>
+                <li><a href="index5.html">2020-21</a></li>
+                <li><a href="#">2019-20</a></li>
+  
+            </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+
+<div class="table-wrap">
+    <input type="text" id="myInput" onkeyup='tableSearch()' placeholder="Goalie">
+    <table class="sortable table-sortable" id="table" data-filter-control="true" data-show-search-clear-button="true">
+    
+      <thead>
+        <tr>
+          <th class="no sort"> 
+            . 
+          </th>
+          <th aria-sort="ascending">
+            <button>
+              Goalie
+              <span aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="num">
+            <button>
+              Games
+              <span aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="num">
+            <button>
+              TOI
+              <span aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="num">
+            <button>
+              Goalie Win
+              <span aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="num">
+            <button>
+              Goalie Loss
+              <span aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="num">
+            <button>
+              Bad in Win
+              <span aria-hidden="true"></span>
+            </button>
+          </th> 
+          <th class="num">
+            <button>
+              Good in Loss
+              <span aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="num">
+            <button>
+              xgdiff
+              <span aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="num">
+            <button>
+              xgdiff/60
+              <span aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="num">
+            <button>
+              xGA
+              <span aria-hidden="true"></span>
+            </button>
+          </th>
+          <th class="num">
+            <button>
+              xGA/60
+              <span aria-hidden="true"></span>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <th>0</th>
+            <td>John Gibson</td>
+            <td>35</td>
+            <td>2032.07</td>
+            <td>4</td>
+            <td>3</td>
+            <td>1</td>
+            <td>8</td>
+            <td>-5.37</td>
+            <td>-0.16</td>
+            <td>95.63</td>
+            <td>2.82</td>
+          </tr>
+          <tr>
+            <th>1</th>
+            <td>Ryan Miller</td>
+            <td>16</td>
+            <td>870.92</td>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>-10.81</td>
+            <td>-0.74</td>
+            <td>40.19</td>
+            <td>2.77</td>
+          </tr>
+          <tr>
+            <th>2</th>
+            <td>Anthony Stolarz</td>
+            <td>8</td>
+            <td>464.62</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1.92</td>
+            <td>0.25</td>
+            <td>18.92</td>
+            <td>2.44</td>
+          </tr>
+          <tr>
+            <th>3</th>
+            <td>Darcy Kuemper</td>
+            <td>27</td>
+            <td>1546.62</td>
+            <td>4</td>
+            <td>2</td>
+            <td>3</td>
+            <td>6</td>
+            <td>-2.59</td>
+            <td>-0.10</td>
+            <td>63.41</td>
+            <td>2.46</td>
+          </tr>
+          <tr>
+            <th>4</th>
+            <td>Antti Raanta</td>
+            <td>12</td>
+            <td>678.83</td>
+            <td>1</td>
+            <td>2</td>
+            <td>0</td>
+            <td>2</td>
+            <td>-2.86</td>
+            <td>-0.25</td>
+            <td>35.14</td>
+            <td>3.11</td>
+          </tr>
+          <tr>
+            <th>5</th>
+            <td>Adin Hill</td>
+            <td>19</td>
+            <td>1005.90</td>
+            <td>0</td>
+            <td>3</td>
+            <td>2</td>
+            <td>2</td>
+            <td>0.17</td>
+            <td>0.01</td>
+            <td>46.17</td>
+            <td>2.75</td>
+          </tr>
+          <tr>
+            <th>6</th>
+            <td>Ivan Prosvetov</td>
+            <td>3</td>
+            <td>130.02</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+            <td>-4.40</td>
+            <td>-2.03</td>
+            <td>4.60</td>
+            <td>2.12</td>
+          </tr>
+          <tr>
+            <th>7</th>
+            <td>Tuukka Rask</td>
+            <td>24</td>
+            <td>1396.45</td>
+            <td>4</td>
+            <td>3</td>
+            <td>5</td>
+            <td>3</td>
+            <td>-1.11</td>
+            <td>-0.05</td>
+            <td>51.89</td>
+            <td>2.23</td>
+          </tr>
+          <tr>
+            <th>8</th>
+            <td>Jaroslav Halak</td>
+            <td>19</td>
+            <td>1090.02</td>
+            <td>1</td>
+            <td>2</td>
+            <td>4</td>
+            <td>3</td>
+            <td>-7.80</td>
+            <td>-0.43</td>
+            <td>38.20</td>
+            <td>2.10</td>
+          </tr>
+          <tr>
+            <th>9</th>
+            <td>Dan Vladar</td>
+            <td>5</td>
+            <td>300.07</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>-4.00</td>
+            <td>-0.80</td>
+            <td>13.00</td>
+            <td>2.60</td>
+          </tr>
+          <tr>
+            <th>10</th>
+            <td>Jeremy Swayman</td>
+            <td>10</td>
+            <td>601.72</td>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+            <td>2</td>
+            <td>5.02</td>
+            <td>0.50</td>
+            <td>20.02</td>
+            <td>2.00</td>
+          </tr>
+          <tr>
+            <th>11</th>
+            <td>Carter Hutton</td>
+            <td>13</td>
+            <td>674.72</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>4</td>
+            <td>-10.34</td>
+            <td>-0.92</td>
+            <td>28.66</td>
+            <td>2.55</td>
+          </tr>
+          <tr>
+            <th>12</th>
+            <td>Linus Ullmark</td>
+            <td>20</td>
+            <td>1117.73</td>
+            <td>1</td>
+            <td>4</td>
+            <td>3</td>
+            <td>1</td>
+            <td>-4.02</td>
+            <td>-0.22</td>
+            <td>44.98</td>
+            <td>2.41</td>
+          </tr>
+          <tr>
+            <th>13</th>
+            <td>Jonas Johansson</td>
+            <td>15</td>
+            <td>816.83</td>
+            <td>0</td>
+            <td>3</td>
+            <td>1</td>
+            <td>2</td>
+            <td>-7.78</td>
+            <td>-0.57</td>
+            <td>31.22</td>
+            <td>2.29</td>
+          </tr>
+          <tr>
+            <th>14</th>
+            <td>Dustin Tokarski</td>
+            <td>13</td>
+            <td>729.43</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>4</td>
+            <td>-6.43</td>
+            <td>-0.53</td>
+            <td>36.57</td>
+            <td>3.01</td>
+          </tr>
+          <tr>
+            <th>15</th>
+            <td>Ukko-Pekka Lukkonnen</td>
+            <td>4</td>
+            <td>216.70</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>-1.71</td>
+            <td>-0.47</td>
+            <td>12.29</td>
+            <td>3.40</td>
+          </tr>
+          <tr>
+            <th>16</th>
+            <td>Michael Houser</td>
+            <td>4</td>
+            <td>243.03</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>-4.76</td>
+            <td>-1.18</td>
+            <td>9.24</td>
+            <td>2.28</td>
+          </tr>
+          <tr>
+            <th>17</th>
+            <td>Petr Mrazek</td>
+            <td>12</td>
+            <td>670.98</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>6.41</td>
+            <td>0.57</td>
+            <td>29.41</td>
+            <td>2.63</td>
+          </tr>
+          <tr>
+            <th>18</th>
+            <td>James Reimer</td>
+            <td>22</td>
+            <td>1331.10</td>
+            <td>1</td>
+            <td>3</td>
+            <td>7</td>
+            <td>3</td>
+            <td>-5.46</td>
+            <td>-0.25</td>
+            <td>53.54</td>
+            <td>2.41</td>
+          </tr>
+          <tr>
+            <th>19</th>
+            <td>Alex Nedeljkovic</td>
+            <td>23</td>
+            <td>1392.03</td>
+            <td>3</td>
+            <td>4</td>
+            <td>1</td>
+            <td>1</td>
+            <td>10.72</td>
+            <td>0.46</td>
+            <td>54.72</td>
+            <td>2.36</td>
+          </tr>
+          <tr>
+            <th>20</th>
+            <td>Joonas Korpisalo</td>
+            <td>33</td>
+            <td>1747.72</td>
+            <td>3</td>
+            <td>8</td>
+            <td>1</td>
+            <td>5</td>
+            <td>-20.67</td>
+            <td>-0.71</td>
+            <td>75.33</td>
+            <td>2.59</td>
+          </tr>
+          <tr>
+            <th>21</th>
+            <td>Elvis Merzlikins</td>
+            <td>28</td>
+            <td>1496.82</td>
+            <td>4</td>
+            <td>5</td>
+            <td>2</td>
+            <td>4</td>
+            <td>-7.08</td>
+            <td>-0.28</td>
+            <td>61.92</td>
+            <td>2.48</td>
+          </tr>
+          <tr>
+            <th>22</th>
+            <td>Veini Vehvilainen</td>
+            <td>1</td>
+            <td>10.67</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>-0.85</td>
+            <td>-4.78</td>
+            <td>0.15</td>
+            <td>0.84</td>
+          </tr>
+          <tr>
+            <th>23</th>
+            <td>Matiss Kivlenieks</td>
+            <td>2</td>
+            <td>123.35</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-2.21</td>
+            <td>-1.07</td>
+            <td>4.79</td>
+            <td>2.33</td>
+          </tr>
+          <tr>
+            <th>24</th>
+            <td>Jacob Markstrom</td>
+            <td>43</td>
+            <td>2486.55</td>
+            <td>2</td>
+            <td>6</td>
+            <td>7</td>
+            <td>3</td>
+            <td>-15.91</td>
+            <td>-0.38</td>
+            <td>95.09</td>
+            <td>2.29</td>
+          </tr>
+          <tr>
+            <th>25</th>
+            <td>David Rittich</td>
+            <td>19</td>
+            <td>965.77</td>
+            <td>1</td>
+            <td>4</td>
+            <td>2</td>
+            <td>5</td>
+            <td>-7.52</td>
+            <td>-0.47</td>
+            <td>38.48</td>
+            <td>2.39</td>
+          </tr>
+          <tr>
+            <th>26</th>
+            <td>Artyom Zagidulin</td>
+            <td>1</td>
+            <td>28.22</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>-1.06</td>
+            <td>-2.25</td>
+            <td>0.94</td>
+            <td>2.00</td>
+          </tr>
+          <tr>
+            <th>27</th>
+            <td>Louis Domingue</td>
+            <td>1</td>
+            <td>57.70</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>-1.48</td>
+            <td>-1.54</td>
+            <td>1.52</td>
+            <td>1.58</td>
+          </tr>
+          <tr>
+            <th>28</th>
+            <td>Malcolm Subban</td>
+            <td>16</td>
+            <td>881.33</td>
+            <td>3</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>-5.21</td>
+            <td>-0.35</td>
+            <td>37.79</td>
+            <td>2.57</td>
+          </tr>
+          <tr>
+            <th>29</th>
+            <td>Collin Dellia</td>
+            <td>6</td>
+            <td>334.48</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>-0.40</td>
+            <td>-0.07</td>
+            <td>19.60</td>
+            <td>3.52</td>
+          </tr>
+          <tr>
+            <th>30</th>
+            <td>Kevin Lankinen</td>
+            <td>37</td>
+            <td>2174.82</td>
+            <td>5</td>
+            <td>8</td>
+            <td>4</td>
+            <td>1</td>
+            <td>-8.97</td>
+            <td>-0.25</td>
+            <td>100.03</td>
+            <td>2.76</td>
+          </tr>
+          <tr>
+            <th>31</th>
+            <td>Philipp Grubauer</td>
+            <td>40</td>
+            <td>2366.87</td>
+            <td>5</td>
+            <td>2</td>
+            <td>8</td>
+            <td>3</td>
+            <td>5.23</td>
+            <td>0.13</td>
+            <td>82.23</td>
+            <td>2.08</td>
+          </tr>
+          <tr>
+            <th>32</th>
+            <td>Hunter Miska</td>
+            <td>5</td>
+            <td>259.80</td>
+            <td>0</td>
+            <td>2</td>
+            <td>2</td>
+            <td>0</td>
+            <td>-9.04</td>
+            <td>-2.09</td>
+            <td>8.96</td>
+            <td>2.07</td>
+          </tr>
+          <tr>
+            <th>33</th>
+            <td>Devan Dubnyk</td>
+            <td>22</td>
+            <td>1182.37</td>
+            <td>0</td>
+            <td>7</td>
+            <td>3</td>
+            <td>5</td>
+            <td>-13.54</td>
+            <td>-0.69</td>
+            <td>49.46</td>
+            <td>2.51</td>
+          </tr>
+          <tr>
+            <th>34</th>
+            <td>Anton Khudobin</td>
+            <td>32</td>
+            <td>1795.92</td>
+            <td>1</td>
+            <td>7</td>
+            <td>3</td>
+            <td>4</td>
+            <td>-11.37</td>
+            <td>-0.38</td>
+            <td>64.63</td>
+            <td>2.16</td>
+          </tr>
+          <tr>
+            <th>35</th>
+            <td>Jake Oettinger</td>
+            <td>29</td>
+            <td>1604.13</td>
+            <td>1</td>
+            <td>7</td>
+            <td>5</td>
+            <td>6</td>
+            <td>-4.15</td>
+            <td>-0.16</td>
+            <td>58.85</td>
+            <td>2.20</td>
+          </tr>
+          <tr>
+            <th>36</th>
+            <td>Thomas Greiss</td>
+            <td>34</td>
+            <td>1755.15</td>
+            <td>2</td>
+            <td>4</td>
+            <td>3</td>
+            <td>9</td>
+            <td>-9.76</td>
+            <td>-0.33</td>
+            <td>69.24</td>
+            <td>2.37</td>
+          </tr>
+          <tr>
+            <th>37</th>
+            <td>Jonathan Bernier</td>
+            <td>24</td>
+            <td>1306.45</td>
+            <td>2</td>
+            <td>0</td>
+            <td>2</td>
+            <td>6</td>
+            <td>-0.89</td>
+            <td>-0.04</td>
+            <td>64.11</td>
+            <td>2.94</td>
+          </tr>
+          <tr>
+            <th>38</th>
+            <td>Calvin Pickard</td>
+            <td>6</td>
+            <td>303.52</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>-6.13</td>
+            <td>-1.21</td>
+            <td>9.87</td>
+            <td>1.95</td>
+          </tr>
+          <tr>
+            <th>39</th>
+            <td>Mikko Koskinen</td>
+            <td>26</td>
+            <td>1438.82</td>
+            <td>1</td>
+            <td>3</td>
+            <td>3</td>
+            <td>1</td>
+            <td>-12.70</td>
+            <td>-0.53</td>
+            <td>63.30</td>
+            <td>2.64</td>
+          </tr>
+          <tr>
+            <th>40</th>
+            <td>Stuart Skinner</td>
+            <td>1</td>
+            <td>59.68</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-1.37</td>
+            <td>-1.38</td>
+            <td>3.63</td>
+            <td>3.65</td>
+          </tr>
+          <tr>
+            <th>41</th>
+            <td>Mike Smith</td>
+            <td>32</td>
+            <td>1846.55</td>
+            <td>2</td>
+            <td>4</td>
+            <td>4</td>
+            <td>1</td>
+            <td>5.61</td>
+            <td>0.18</td>
+            <td>76.61</td>
+            <td>2.49</td>
+          </tr>
+          <tr>
+            <th>42</th>
+            <td>Chris Driedger</td>
+            <td>23</td>
+            <td>1361.60</td>
+            <td>1</td>
+            <td>3</td>
+            <td>3</td>
+            <td>2</td>
+            <td>4.05</td>
+            <td>0.18</td>
+            <td>51.05</td>
+            <td>2.25</td>
+          </tr>
+          <tr>
+            <th>43</th>
+            <td>Sergei Bobrovsky</td>
+            <td>31</td>
+            <td>1816.47</td>
+            <td>1</td>
+            <td>2</td>
+            <td>11</td>
+            <td>4</td>
+            <td>-12.52</td>
+            <td>-0.41</td>
+            <td>75.48</td>
+            <td>2.49</td>
+          </tr>
+          <tr>
+            <th>44</th>
+            <td>Spencer Knight</td>
+            <td>4</td>
+            <td>206.90</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>-1.20</td>
+            <td>-0.35</td>
+            <td>6.80</td>
+            <td>1.97</td>
+          </tr>
+          <tr>
+            <th>45</th>
+            <td>Jonathan Quick</td>
+            <td>22</td>
+            <td>1219.20</td>
+            <td>1</td>
+            <td>3</td>
+            <td>5</td>
+            <td>1</td>
+            <td>-5.31</td>
+            <td>-0.26</td>
+            <td>52.69</td>
+            <td>2.59</td>
+          </tr>
+          <tr>
+            <th>46</th>
+            <td>Cal Petersen</td>
+            <td>35</td>
+            <td>2018.92</td>
+            <td>3</td>
+            <td>6</td>
+            <td>1</td>
+            <td>6</td>
+            <td>-1.99</td>
+            <td>-0.06</td>
+            <td>95.01</td>
+            <td>2.82</td>
+          </tr>
+          <tr>
+            <th>47</th>
+            <td>Troy Grosenick</td>
+            <td>2</td>
+            <td>120.00</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1.00</td>
+            <td>0.50</td>
+            <td>7.00</td>
+            <td>3.50</td>
+          </tr>
+          <tr>
+            <th>48</th>
+            <td>Cam Talbot</td>
+            <td>33</td>
+            <td>1976.12</td>
+            <td>4</td>
+            <td>4</td>
+            <td>10</td>
+            <td>3</td>
+            <td>-7.58</td>
+            <td>-0.23</td>
+            <td>78.42</td>
+            <td>2.38</td>
+          </tr>
+          <tr>
+            <th>49</th>
+            <td>Kaapo Kahkonen</td>
+            <td>24</td>
+            <td>1414.47</td>
+            <td>1</td>
+            <td>2</td>
+            <td>7</td>
+            <td>1</td>
+            <td>-15.24</td>
+            <td>-0.65</td>
+            <td>52.76</td>
+            <td>2.24</td>
+          </tr>
+          <tr>
+            <th>50</th>
+            <td>Carey Price</td>
+            <td>25</td>
+            <td>1478.75</td>
+            <td>1</td>
+            <td>6</td>
+            <td>4</td>
+            <td>3</td>
+            <td>-7.79</td>
+            <td>-0.32</td>
+            <td>57.21</td>
+            <td>2.32</td>
+          </tr>
+          <tr>
+            <th>51</th>
+            <td>Jake Allen</td>
+            <td>29</td>
+            <td>1702.60</td>
+            <td>3</td>
+            <td>1</td>
+            <td>4</td>
+            <td>5</td>
+            <td>-7.69</td>
+            <td>-0.27</td>
+            <td>68.31</td>
+            <td>2.41</td>
+          </tr>
+          <tr>
+            <th>52</th>
+            <td>Cayden Primeau</td>
+            <td>4</td>
+            <td>201.90</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>-5.35</td>
+            <td>-1.59</td>
+            <td>8.65</td>
+            <td>2.57</td>
+          </tr>
+          <tr>
+            <th>53</th>
+            <td>Mackenzie Blackwood</td>
+            <td>35</td>
+            <td>2091.10</td>
+            <td>4</td>
+            <td>8</td>
+            <td>6</td>
+            <td>4</td>
+            <td>-14.00</td>
+            <td>-0.40</td>
+            <td>92.00</td>
+            <td>2.64</td>
+          </tr>
+          <tr>
+            <th>54</th>
+            <td>Scott Wedgewood</td>
+            <td>16</td>
+            <td>888.03</td>
+            <td>5</td>
+            <td>2</td>
+            <td>1</td>
+            <td>2</td>
+            <td>-5.64</td>
+            <td>-0.38</td>
+            <td>40.36</td>
+            <td>2.73</td>
+          </tr>
+          <tr>
+            <th>55</th>
+            <td>Eric Comrie</td>
+            <td>1</td>
+            <td>60.00</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0.15</td>
+            <td>0.15</td>
+            <td>3.15</td>
+            <td>3.15</td>
+          </tr>
+          <tr>
+            <th>56</th>
+            <td>Aaron Dell</td>
+            <td>7</td>
+            <td>319.17</td>
+            <td>0</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+            <td>-9.00</td>
+            <td>-1.69</td>
+            <td>13.00</td>
+            <td>2.44</td>
+          </tr>
+          <tr>
+            <th>57</th>
+            <td>Juuse Saros</td>
+            <td>36</td>
+            <td>2051.80</td>
+            <td>5</td>
+            <td>1</td>
+            <td>4</td>
+            <td>2</td>
+            <td>11.21</td>
+            <td>0.33</td>
+            <td>84.21</td>
+            <td>2.46</td>
+          </tr>
+          <tr>
+            <th>58</th>
+            <td>Pekka Rinne</td>
+            <td>24</td>
+            <td>1310.48</td>
+            <td>1</td>
+            <td>3</td>
+            <td>5</td>
+            <td>3</td>
+            <td>-11.63</td>
+            <td>-0.53</td>
+            <td>50.37</td>
+            <td>2.31</td>
+          </tr>
+          <tr>
+            <th>59</th>
+            <td>Kasimir Kaskisuo</td>
+            <td>1</td>
+            <td>15.37</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0.37</td>
+            <td>1.44</td>
+            <td>0.37</td>
+            <td>1.44</td>
+          </tr>
+          <tr>
+            <th>60</th>
+            <td>Semyon Varlamov</td>
+            <td>36</td>
+            <td>2116.93</td>
+            <td>4</td>
+            <td>7</td>
+            <td>3</td>
+            <td>4</td>
+            <td>9.52</td>
+            <td>0.27</td>
+            <td>81.52</td>
+            <td>2.31</td>
+          </tr>
+          <tr>
+            <th>61</th>
+            <td>Ilya Sorokin</td>
+            <td>22</td>
+            <td>1271.78</td>
+            <td>4</td>
+            <td>2</td>
+            <td>4</td>
+            <td>3</td>
+            <td>1.50</td>
+            <td>0.07</td>
+            <td>47.50</td>
+            <td>2.24</td>
+          </tr>
+          <tr>
+            <th>62</th>
+            <td>Igor Shesterkin</td>
+            <td>35</td>
+            <td>1899.02</td>
+            <td>3</td>
+            <td>3</td>
+            <td>6</td>
+            <td>5</td>
+            <td>1.79</td>
+            <td>0.06</td>
+            <td>84.79</td>
+            <td>2.68</td>
+          </tr>
+          <tr>
+            <th>63</th>
+            <td>Alexandar Georgeiv</td>
+            <td>19</td>
+            <td>973.93</td>
+            <td>1</td>
+            <td>3</td>
+            <td>2</td>
+            <td>5</td>
+            <td>-4.37</td>
+            <td>-0.27</td>
+            <td>39.63</td>
+            <td>2.44</td>
+          </tr>
+          <tr>
+            <th>64</th>
+            <td>Keith Kinkaid</td>
+            <td>9</td>
+            <td>485.88</td>
+            <td>1</td>
+            <td>3</td>
+            <td>1</td>
+            <td>1</td>
+            <td>-4.28</td>
+            <td>-0.53</td>
+            <td>16.72</td>
+            <td>2.06</td>
+          </tr>
+          <tr>
+            <th>65</th>
+            <td>Matt Murray</td>
+            <td>27</td>
+            <td>1404.18</td>
+            <td>2</td>
+            <td>6</td>
+            <td>3</td>
+            <td>3</td>
+            <td>-16.16</td>
+            <td>-0.69</td>
+            <td>62.84</td>
+            <td>2.69</td>
+          </tr>
+          <tr>
+            <th>66</th>
+            <td>Marcus Hogberg</td>
+            <td>14</td>
+            <td>641.85</td>
+            <td>1</td>
+            <td>5</td>
+            <td>2</td>
+            <td>0</td>
+            <td>-12.60</td>
+            <td>-1.18</td>
+            <td>27.40</td>
+            <td>2.56</td>
+          </tr>
+          <tr>
+            <th>67</th>
+            <td>Joey Daccord</td>
+            <td>8</td>
+            <td>403.37</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>1</td>
+            <td>-3.81</td>
+            <td>-0.57</td>
+            <td>18.19</td>
+            <td>2.71</td>
+          </tr>
+          <tr>
+            <th>68</th>
+            <td>Filip Gustavsson</td>
+            <td>9</td>
+            <td>471.57</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>3.19</td>
+            <td>0.41</td>
+            <td>20.19</td>
+            <td>2.57</td>
+          </tr>
+          <tr>
+            <th>69</th>
+            <td>Anton Forsberg</td>
+            <td>8</td>
+            <td>448.55</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>-1.00</td>
+            <td>-0.13</td>
+            <td>23.00</td>
+            <td>3.08</td>
+          </tr>
+          <tr>
+            <th>70</th>
+            <td>Carter Hart</td>
+            <td>27</td>
+            <td>1456.32</td>
+            <td>1</td>
+            <td>4</td>
+            <td>5</td>
+            <td>4</td>
+            <td>-28.42</td>
+            <td>-1.17</td>
+            <td>60.58</td>
+            <td>2.50</td>
+          </tr>
+          <tr>
+            <th>71</th>
+            <td>Brian Elliott</td>
+            <td>30</td>
+            <td>1607.72</td>
+            <td>3</td>
+            <td>7</td>
+            <td>5</td>
+            <td>2</td>
+            <td>-21.40</td>
+            <td>-0.80</td>
+            <td>60.60</td>
+            <td>2.26</td>
+          </tr>
+          <tr>
+            <th>72</th>
+            <td>Alex Lyon</td>
+            <td>6</td>
+            <td>324.15</td>
+            <td>0</td>
+            <td>2</td>
+            <td>0</td>
+            <td>2</td>
+            <td>-4.30</td>
+            <td>-0.80</td>
+            <td>13.70</td>
+            <td>2.54</td>
+          </tr>
+          <tr>
+            <th>73</th>
+            <td>Tristan Jarry</td>
+            <td>39</td>
+            <td>2185.30</td>
+            <td>1</td>
+            <td>5</td>
+            <td>12</td>
+            <td>3</td>
+            <td>-11.24</td>
+            <td>-0.31</td>
+            <td>88.76</td>
+            <td>2.44</td>
+          </tr>
+          <tr>
+            <th>74</th>
+            <td>Casey DeSmith</td>
+            <td>20</td>
+            <td>1132.32</td>
+            <td>3</td>
+            <td>2</td>
+            <td>5</td>
+            <td>3</td>
+            <td>-0.04</td>
+            <td>-0.00</td>
+            <td>47.96</td>
+            <td>2.54</td>
+          </tr>
+          <tr>
+            <th>75</th>
+            <td>Maxime Lagace</td>
+            <td>1</td>
+            <td>60.00</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>2.00</td>
+            <td>2.00</td>
+            <td>2.00</td>
+            <td>2.00</td>
+          </tr>
+          <tr>
+            <th>76</th>
+            <td>Martin Jones</td>
+            <td>34</td>
+            <td>1868.42</td>
+            <td>4</td>
+            <td>2</td>
+            <td>4</td>
+            <td>4</td>
+            <td>-16.60</td>
+            <td>-0.53</td>
+            <td>85.40</td>
+            <td>2.74</td>
+          </tr>
+          <tr>
+            <th>77</th>
+            <td>Alexei Melnichuk</td>
+            <td>3</td>
+            <td>130.58</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>-3.01</td>
+            <td>-1.38</td>
+            <td>7.99</td>
+            <td>3.67</td>
+          </tr>
+          <tr>
+            <th>78</th>
+            <td>Josef Korenar</td>
+            <td>10</td>
+            <td>491.83</td>
+            <td>0</td>
+            <td>3</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-3.44</td>
+            <td>-0.42</td>
+            <td>22.56</td>
+            <td>2.75</td>
+          </tr>
+          <tr>
+            <th>79</th>
+            <td>Jordan Binnington</td>
+            <td>42</td>
+            <td>2448.20</td>
+            <td>7</td>
+            <td>5</td>
+            <td>5</td>
+            <td>7</td>
+            <td>-0.79</td>
+            <td>-0.02</td>
+            <td>107.21</td>
+            <td>2.63</td>
+          </tr>
+          <tr>
+            <th>80</th>
+            <td>Ville Husso</td>
+            <td>17</td>
+            <td>917.32</td>
+            <td>2</td>
+            <td>1</td>
+            <td>4</td>
+            <td>2</td>
+            <td>-8.08</td>
+            <td>-0.53</td>
+            <td>40.92</td>
+            <td>2.68</td>
+          </tr>
+          <tr>
+            <th>81</th>
+            <td>Andrei Vasilevskiy</td>
+            <td>42</td>
+            <td>2523.62</td>
+            <td>3</td>
+            <td>2</td>
+            <td>10</td>
+            <td>4</td>
+            <td>6.37</td>
+            <td>0.15</td>
+            <td>99.37</td>
+            <td>2.36</td>
+          </tr>
+          <tr>
+            <th>82</th>
+            <td>Curtis McElhinney</td>
+            <td>12</td>
+            <td>719.32</td>
+            <td>1</td>
+            <td>4</td>
+            <td>2</td>
+            <td>1</td>
+            <td>-14.62</td>
+            <td>-1.22</td>
+            <td>22.38</td>
+            <td>1.87</td>
+          </tr>
+          <tr>
+            <th>83</th>
+            <td>Christopher Gibson</td>
+            <td>2</td>
+            <td>112.97</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>-1.92</td>
+            <td>-1.02</td>
+            <td>3.08</td>
+            <td>1.64</td>
+          </tr>
+          <tr>
+            <th>84</th>
+            <td>Frederik Andersen</td>
+            <td>24</td>
+            <td>1420.12</td>
+            <td>1</td>
+            <td>4</td>
+            <td>5</td>
+            <td>1</td>
+            <td>-12.67</td>
+            <td>-0.54</td>
+            <td>57.33</td>
+            <td>2.42</td>
+          </tr>
+          <tr>
+            <th>85</th>
+            <td>Jack Campbell</td>
+            <td>22</td>
+            <td>1284.40</td>
+            <td>3</td>
+            <td>2</td>
+            <td>4</td>
+            <td>0</td>
+            <td>3.04</td>
+            <td>0.14</td>
+            <td>49.04</td>
+            <td>2.29</td>
+          </tr>
+          <tr>
+            <th>86</th>
+            <td>Michael Hutchinson</td>
+            <td>8</td>
+            <td>421.87</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-1.98</td>
+            <td>-0.28</td>
+            <td>15.02</td>
+            <td>2.14</td>
+          </tr>
+          <tr>
+            <th>87</th>
+            <td>Braden Holtby</td>
+            <td>21</td>
+            <td>1260.48</td>
+            <td>1</td>
+            <td>2</td>
+            <td>1</td>
+            <td>1</td>
+            <td>-13.04</td>
+            <td>-0.62</td>
+            <td>63.96</td>
+            <td>3.04</td>
+          </tr>
+          <tr>
+            <th>88</th>
+            <td>Thatcher Demko</td>
+            <td>35</td>
+            <td>2086.80</td>
+            <td>5</td>
+            <td>0</td>
+            <td>1</td>
+            <td>3</td>
+            <td>6.97</td>
+            <td>0.20</td>
+            <td>105.97</td>
+            <td>3.05</td>
+          </tr>
+          <tr>
+            <th>89</th>
+            <td>Robin Lehner</td>
+            <td>19</td>
+            <td>1155.32</td>
+            <td>2</td>
+            <td>2</td>
+            <td>3</td>
+            <td>2</td>
+            <td>3.25</td>
+            <td>0.17</td>
+            <td>47.25</td>
+            <td>2.45</td>
+          </tr>
+          <tr>
+            <th>90</th>
+            <td>Marc-Andre Fleury</td>
+            <td>36</td>
+            <td>2146.60</td>
+            <td>4</td>
+            <td>0</td>
+            <td>6</td>
+            <td>6</td>
+            <td>17.71</td>
+            <td>0.50</td>
+            <td>88.71</td>
+            <td>2.48</td>
+          </tr>
+          <tr>
+            <th>91</th>
+            <td>Oscar Dansk</td>
+            <td>1</td>
+            <td>61.42</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>-1.19</td>
+            <td>-1.16</td>
+            <td>2.81</td>
+            <td>2.75</td>
+          </tr>
+          <tr>
+            <th>92</th>
+            <td>Logan Thompson</td>
+            <td>1</td>
+            <td>8.25</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0.15</td>
+            <td>1.09</td>
+            <td>0.15</td>
+            <td>1.09</td>
+          </tr>
+          <tr>
+            <th>93</th>
+            <td>Connor Hellebuyck</td>
+            <td>45</td>
+            <td>2602.82</td>
+            <td>1</td>
+            <td>1</td>
+            <td>7</td>
+            <td>10</td>
+            <td>11.11</td>
+            <td>0.26</td>
+            <td>123.11</td>
+            <td>2.84</td>
+          </tr>
+          <tr>
+            <th>94</th>
+            <td>Laurent Brossoit</td>
+            <td>14</td>
+            <td>744.12</td>
+            <td>2</td>
+            <td>1</td>
+            <td>0</td>
+            <td>3</td>
+            <td>1.95</td>
+            <td>0.16</td>
+            <td>31.95</td>
+            <td>2.58</td>
+          </tr>
+          <tr>
+            <th>95</th>
+            <td>Ilya Samsonov</td>
+            <td>19</td>
+            <td>1092.82</td>
+            <td>1</td>
+            <td>3</td>
+            <td>7</td>
+            <td>0</td>
+            <td>-7.81</td>
+            <td>-0.43</td>
+            <td>41.19</td>
+            <td>2.26</td>
+          </tr>
+          <tr>
+            <th>96</th>
+            <td>Vitek Vanacek</td>
+            <td>37</td>
+            <td>2115.48</td>
+            <td>4</td>
+            <td>7</td>
+            <td>8</td>
+            <td>2</td>
+            <td>-9.73</td>
+            <td>-0.28</td>
+            <td>85.27</td>
+            <td>2.42</td>
+          </tr>
+          <tr>
+            <th>97</th>
+            <td>Craig Anderson</td>
+            <td>4</td>
+            <td>168.73</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0.10</td>
+            <td>0.04</td>
+            <td>6.10</td>
+            <td>2.17</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      
+          <link rel="stylesheet" href="css/tablesort2.css">
+          <script src="js/tablesort2.js"></script>
+
+</div>
+<script type="application/javascript">
+    function tableSearch(){
+        let input, filter, table, tr, td, txtValue;
+        console.log("is this working?")
+        //initializing variables
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("table");
+        tr = table.getElementsByTagName("tr");
+
+        for(let i = 0; i < tr.length; i++){
+            td = tr[i].getElementsByTagName("td")[0];
+            if(td) {
+                txtValue = td.textContent || td.innerText;
+                if(txtValue.toUpperCase().indexOf(filter) > -1){
+                    tr[i].style.display = "";
+                }
+                else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }        
+    }
+    </script>
+</html>

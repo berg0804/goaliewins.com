@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+     ul {
+        background-color: whitesmoke;
+        list-style-type: none;
+     }
+     
+     li {
+        background-color:  yellow;
+        
+     }
+
+     nav>ul {
+        height: 60px;
+        line-height: 60px;
+        text-align: text;
+        background-color:  darkgray;
+     }
+
+     nav>ul>li {
+        display: inline-block;
+        position: relative;
+        background-color: beige;
+        border-radius: 5px;
+        padding: 0 20px;
+     }
+
+     nav ul li a {
+        text-decoration: none;
+        display: block;
+        color: chocolate;
+     }
+
+     nav ul li a:hover {
+        color: black;
+     }
+
+     nav>ul>li:hover>ul {
+        display:block;
+     }
+
+     nav>ul>li>ul>li>ul>li {
+        background-color: beige;
+     }
+
+     nav>ul>li>ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+
+     }
+
+
+
+     nav>ul>li>ul>li {
+        position: relative;
+        background-color: beige;
+     }
+
+     nav>ul>li>ul>li:hover>ul {
+        display: block;
+     }
+
+     nav>ul>li>ul>li>ul {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        display: none;
+        width: 100;
+     }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="home3.html">Home</a></li>
+            <li><a href="players.html">Players</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Yearss</a>
+            <ul>
+                <li><a href="#">2022-23</a></li>
+                <li><a href="index4.html">2021-22</a></li>
+                <li><a href="index5.html">2020-21</a></li>
+                <li><a href="#">2019-20</a></li>
+                
+
+                </li>    
+            </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

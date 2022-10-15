@@ -2,64 +2,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
 
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-
-  
-}
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #3e8e41;
-}
-
-#myInput {
-  box-sizing: border-box;
-  background-image: url('searchicon.png');
-  background-position: 14px 12px;
-  background-repeat: no-repeat;
-  font-size: 16px;
-  padding: 14px 20px 12px 45px;
-  border: none;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
-}
-
-#myInput:focus {outline: 3px solid #ddd;}
-
-.dropdown {
-  position: absolute;
-  display: inline-block;
-  text-align: left;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #2f2d2d;
-  min-width: 230px;
-  overflow: auto;
-  border: 1px solid #ddd;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
-</style>
 </head>
 
 <style>
@@ -69,9 +12,10 @@
         
     }
 
- ul {
-    background-color: whitesmoke;
+  ul {
+    background-color: lightskyblue;
     list-style-type: none;
+    columns: 4;
  }
  
  li {
@@ -83,13 +27,13 @@
     height: 60px;
     line-height: 60px;
     text-align: left;
-    background-color:  darkgray;
+    background-color:  lightblue;
  }
 
  nav>ul>li {
     display: inline-block;
     position: relative;
-    background-color: beige;
+    background-color: lightblue;
     border-radius: 5px;
     padding: 0 20px;
     z-index:999;
@@ -98,11 +42,11 @@
  nav ul li a {
     text-decoration: none;
     display: block;
-    color: chocolate;
+    color: black;
  }
 
  nav ul li a:hover {
-    color: black;
+    color: red;
  }
 
  nav>ul>li:hover>ul {
@@ -110,7 +54,7 @@
  }
 
  nav>ul>li>ul>li>ul>li {
-    background-color: beige;
+    background-color: lightblue;
  }
 
  nav>ul>li>ul {
@@ -125,7 +69,10 @@
 
  nav>ul>li>ul>li {
     position: relative;
-    background-color: beige;
+    background-color: lightskyblue;
+    width: 200px;
+    text-align: center;
+    
  }
 
  nav>ul>li>ul>li:hover>ul {
@@ -143,18 +90,165 @@
 </style>
 </head>
 <body>
+  <header> 
+    <nav class = "navbar fixed-top navbar-expand-lg navbar-light white">
+       <div class="container-fluid">
+       <iframe src="https://scorestream.com/widgets/scoreboards/horz?userWidgetId=52215" style="padding:0px;border:0px;width:100%;max-width:100%;height:100%;max-height:100%;">
+          title="Realtime sports scoreboard widget" scrolling="no" frameBorder="0"></iframe>
+       </div>
 <nav>
     <ul>
-        <li><a href="home3.html">Home</a></li>
-        <li><a href="players.html">Goalies</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Teams</a>
+      <ul>
+         <li><a href="anaheim.html">Anaheim Ducks</li>
+         <li><a href="calgary.html">Calgary Flames</li>   
+         <li><a href="edmonton.html">Edmonton Oilers</li>
+         <li><a href="los_angeles.html">Los Angeles Kings</li>
+         <li><a href="san_jose.html">San Jose Sharks</li>
+         <li><a href="seattle.html">Seattle Kraken</li>
+         <li><a href="vancouver.html">Vancouver Canucks</li>
+         <li><a href="vegas.html">Vegas Golden Knights</li>         
+         <li><a href="arizona.html">Arizona Coyotes</li>
+         <li><a href="chicago.html">Chicago Blackhawks</li>
+         <li><a href="colorado.html">Colorado Avalanche</li>
+         <li><a href="dallas.html">Dallas Stars</li>
+         <li><a href="minnesota.html">Minnesota Wild</li>            
+         <li><a href="nashville.html">Nashville Predators</li>
+         <li><a href="st_louis.html">St. Louis Blues</li>
+         <li><a href="winnipeg.html">Winnipeg Jets</li>
+         <li><a href="carolina.html">Carolina Hurricanes</li>
+         <li><a href="columbus.html">Columbus Blue Jackets</li>
+         <li><a href="new_jersey.html">New Jersey Devils</li>
+         <li><a href="ny_islanders.html">New York Islanders</li>
+         <li><a href="ny_rangers.html">New York Rangers</li>
+         <li><a href="philadelphia.html">Philadelphia Flyers</li>            
+         <li><a href="pittsburgh.html">Pittsburgh Penguins</li>
+         <li><a href="washington.html">Washington Capitals</li>            
+         <li><a href="boston.html">Boston Bruins</li>
+         <li><a href="buffalo.html">Buffalo Sabres</li>
+         <li><a href="detroit.html">Detroit Red Wings</li>            
+         <li><a href="florida.html">Florida Panthers</li>
+         <li><a href="montreal.html">Montreal Canadiens</li>
+         <li><a href="ottawa.html">Ottawa Senators</li>
+         <li><a href="tampa_bay.html">Tampa Bay Lightning</li>
+         <li><a href="toronto.html">Toronto Maple Leafs</li>
+      </ul>
+      </li>
         <li><a href="#">About</a></li>
         <li><a href="#">Years</a>
         <ul>
-            <li><a href="#">2022-23</a></li>
+            <li><a href="index7.html">2022-23</a></li>
             <li><a href="index4.html">2021-22</a></li>
             <li><a href="index5.html">2020-21</a></li>
-            <li><a href="#">2019-20</a></li>
+            <li><a href="index3.html">2019-20</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Active</a>
+        <ul>
+            <li><a href="jake_allen.html">Jake Allen</a></li>
+<li><a href="hugo_alnefelt.html">Hugo Alnefelt</a></li>
+<li><a href="frederik_andersen.html">Frederik Andersen</a></li>
+<li><a href="craig_anderson.html">Craig Anderson</a></li>
+<li><a href="jonathan_bernier.html">Jonathan Bernier</a></li>
+<li><a href="jf_berube.html">Jean-Francois Berube</a></li>
+<li><a href="jordan_binnington.html">Jordan Binnington</a></li>
+<li><a href="mackenzie_blackwood.html">Mackenzie Blackwood</a></li>
+<li><a href="sergei_bobrovsky.html">Sergei Bobrovsky</a></li>
+<li><a href="laurent_brossoit.html">Laurent Brossoit</a></li>
+<li><a href="jack_campbell.html">Jack Campbell</a></li>
+<li><a href="eric_comrie.html">Eric Comrie</a></li>
+<li><a href="collin_delia.html">Collin Delia</a></li>
+<li><a href="aaron_dell.html">Aaron Dell</a></li>
+<li><a href="thatcher_demko.html">Thatcher Demko</a></li>
+<li><a href="casey_desmith.html">Casey DeSmith</a></li>
+            <li><a href="lukas_dostal.html">Lukas Dostal</a></li>
+<li><a href="chris_driedger.html">Chris Driedger</a></li>
+<li><a href="brian_elliott.html">Brian Elliott</a></li>
+<li><a href="ma_fleury.html">Marc-Andre Fleury</a></li>
+<li><a href="anton_forsberg.html">Anton Forsberg</a></li>
+<li><a href="pavel_francouz.html">Pavel Francouz</a></li>
+            <li><a href="alexandar_georgiev.html">Alexandar Georgiev</a></li>
+            <li><a href="john_gibson.html">John Gibson</a></li>
+<li><a href="thomas_greiss.html">Thomas Greiss</a></li>
+<li><a href="philipp_grubauer.html">Philipp Grubauer</a></li>
+<li><a href="filip_gustavsson.html">Filip Gustavsson</a></li>
+<li><a href="jaroslav_halak.html">Jaroslav Halak</a></li>
+<li><a href="carter_hart.html">Carter Hart</a></li>
+<li><a href="connor_hellebuyck.html">Connor Hellebuyck</a></li>
+<li><a href="adin_hill.html">Adin Hill</a></li>
+<li><a href="arvid_holm.html">Arvid Holm</a></li>
+<li><a href="ville_husso.html">Ville Husso</a></li>
+<li><a href="michael_hutchinson.html">Michael Hutchinson</a></li>
 
+            <li><a href="connor_ingram.html">Connor Ingram</a></li>
+<li><a href="tristan_jarry.html">Tristan Jarry</a></li>
+<li><a href="martin_jones.html">Martin Jones</a></li>
+<li><a href="kaapo_kahkonen.html">Kaapo Kahkonen</a></li>
+<li><a href="erik_kallgren.html">Erik Kallgren</a></li>
+<li><a href="anton_khudobin.html">Anton Khudobin</a></li>
+<li><a href="spencer_knight.html">Spencer Knight</a></li>
+<li><a href="joonas_korpisalo.html">Joonas Korpisalo</a></li>
+<li><a href="darcy_kuemper.html">Darcy Kuemper</a></li>
+<li><a href="kevin_lankinen.html">Kevin Lankinen</a></li>
+<li><a href="robin_lehner.html">Robin Lehner</a></li>
+<li><a href="charlie_lindgren.html">Charlie Lindgren</a></li>
+<li><a href="alex_lyon.html">Alex Lyon</a></li>
+<li><a href="jacob_markstrom.html">Jacob Markstrom</a></li>
+<li><a href="spencer_martin.html">Spencer Martin</a></li>
+<li><a href="elvis_merzlikins.html">Elvis Merzlikins</a></li>
+<li><a href="sam_montembeault.html">Sam Montembeault</a></li>
+<li><a href="petr_mrazek.html">Petr Mrazek</a></li>
+<li><a href="matt_murray.html">Matt Murray</a></li>
+<li><a href="alex_nedeljkovic.html">Alex Nedljkovic</a></li>
+<li><a href="jake_oettinger.html">Jake Oettinger</a></li>
+<li><a href="cal_petersen.html">Cal Petersen</a></li>
+<li><a href="calvin_pickard.html">Calvin Pickard</a></li>
+<li><a href="carey_price.html">Carey Price</a></li>
+<li><a href="cayden_primeau.html">Cayden Primeau</a></li>
+
+<li><a href="ivan_prosvetov.html">Ivan Prosvetov</a></li>
+<li><a href="jonathan_quick.html">Jonathan Quick</a></li>
+<li><a href="antti_raanta.html">Antti Raanta</a></li>
+<li><a href="james_reimer.html">James Reimer</a></li>
+<li><a href="david_rittich.html">David Rittich</a></li>
+<li><a href="ilya_samsonov.html">Ilya Samsonov</a></li>
+<li><a href="felix_sandstrom.html">Felix Sandstrom</a></li>
+            <li><a href="juuse_saros.html">Juuse Saros</a></li>
+<li><a href="akira_schmid.html">Akira Schmid</a></li>
+<li><a href="cory_schneider.html">Cory Schneider</a></li>
+            <li><a href="igor_shesterkin.html">Igor Shesterkin</a></li>
+<li><a href="stuart_skinner.html">Stuart Skinner</a></li>
+<li><a href="arvid_soderblom.html">Arvid Soderblom</a></li>
+            <li><a href="ilya_sorokin.html">Ilya Sorokin</a></li><li><a href="alex_stalock.html">Alex Stalock</a></li>
+<li><a href="anthony_stolarz.html">Anthony Stolarz</a></li>
+<li><a href="jeremy_swayman.html">Jeremy Swayman</a></li>
+<li><a href="cam_talbot.html">Cam Talbot</a></li>
+<li><a href="daniil_tarasov.html">Daniil Tarasov</a></li>
+<li><a href="logan_thompson.html">Logan Thompson</a></li>
+<li><a href="dustin_tokarski.html">Dustin Tokarski</a></li>
+<li><a href="linus_ullmark.html">Linus Ullmark</a></li>
+<li><a href="vitek_vanecek.html">Vitek Vanacek</a></li>
+<li><a href="semyon_varlamov.html">Semyon Varlamov</a></li>
+<li><a href="andrei_vasilevskiy.html">Andrei Vasilevskiy</a></li>
+<li><a href="karel_vejmelka.html">Karel Vejmelka</a></li>
+<li><a href="dan_vladar.html">Dan Vladar</a></li>
+<li><a href="scott_wedgewood.html">Scott Wedgewood</a></li>
+          
+        </ul>
+        </li>
+        <li><a href="#">Unsigned</a>
+          <ul>
+              <li><a href="kevin_boyle.html">Kevin Boyle</a></li>
+              <li><a href="adam_huska.html">Adam Huska</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Retired</a>
+          <ul>
+              <li><a href="thomas_hodges.html">Thomas Hodges</a></li>
+              <li><a href="henrik_lundqvist.html">Henrik Lundqvist</a></li>
+              <li><a href="ryan_miller.html">Ryan Miller</a></li>
+              <li><a href="pekka_rinne.html">Pekka Rinne</a></li> 
         </ul>
         </li>
     </ul>
@@ -163,72 +257,83 @@
 <body>
 
 
-<div class="dropdown right">
-  <button onclick="myFunction()" class="dropbtn">Goalies</button>
-  <div id="myDropdown" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    <a href="kevin_boyle.html">Kevin Boyle</a>
-    <a href="lukas_dostal.html">Lukas Dostal</a>
-    <a href="alexandar_georgiev.html">Alexandar Georgiev</a>
-    <a href="john_gibson.html">John Gibson</a>
-    <a href="thomas_hodges.html">Thomas Hodges</a>
-    <a href="adam_huska.html">Adam Huska</a>
-    <a href="connor_ingram.html">Connor Ingram</a>
-    <a href="henrik_lundqvist.html">Henrik Lundqvist</a>
-    <a href="ryan_miller.html">Ryan Miller</a>
-    <a href="pekka_rinne.html">Pekka Rinne</a>
-    <a href="juuse_saros.html">Juuse Saros</a>
-    <a href="igor_shesterkin.html">Igor Shesterkin</a>
-    <a href="ilya_sorokin.html">Ilya Sorokin</a>
-    <a href="#custom">Custom</a>
-    <a href="#support">Support</a>
-    <a href="#tools">Tools</a>
-  </div>
-</div>
 
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-function filterFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  div = document.getElementById("myDropdown");
-  a = div.getElementsByTagName("a");
-  for (i = 0; i < a.length; i++) {
-    txtValue = a[i].textContent || a[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      a[i].style.display = "";
-    } else {
-      a[i].style.display = "none";
-    }
-  }
-}
-</script>
 <style>
     body {
       background-image: url('');
       background-repeat: no-repeat;
       background-attachment: fixed;  
-      background-size: 800px;
+      background-size: 900px;
       opacity: 0.9;
+      background-color: lightblue;
+      
     }
     </style>
+    </head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      /* Create two equal columns that floats next to each other */
+      .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+        
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+        }
+      }
+      </style>
+      </head>
+      <body>
+      
+      
+      
+      <div class="row">
+        <div class="column" style="background-color:lightblue;">
+          <br></br>
+          <br></br>
+          <h1 style="font-family:garabond">Pekka Rinne</h1>
+          <br></br>
+          <img src="images/pekka_rinne_exga.jpg"
+          width="600">
+          <img src="images/pekka_rinne_exga60.jpg"
+          width="600">
+          <img src="images/pekka_rinne_year.jpg"
+          width="600">
+        </div>
+        <div class="column" style="background-color:lightblue;">
+          <br></br>
+          <br></br>
+          <img src="https://www.hockey-reference.com/req/202112171/images/headshots/rinnepe01-2020.jpg">
+          <script src="https://widgets.sports-reference.com/wg.fcgi?css=1&site=hr&url=%2Fplayers%2Fr%2Frinnepe01.html&div=div_stats_basic_plus_nhl"></script>
+          <img src="images/pekka_rinne_rank.png"
+          width="600">
+          <img src="">
+        </div>
+      </div>
+    <body>
+    
 
 
 
 
 
 
-<br></br>
-<br></br>
-<h1>Pekka Rinne</h1>
-<img src="/Users/robertberger/Documents/hockey/images/pekka_rinne_exga.jpg">
-<img src="/Users/robertberger/Documents/hockey/images/pekka_rinne_exga60.jpg">
-<img src="/Users/robertberger/Documents/hockey/images/pekka_rinne_year.jpg">
+
+
 </body>
 </html>
